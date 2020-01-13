@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 13, 2020 at 07:48 AM
+-- Generation Time: Jan 13, 2020 at 08:49 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -58,7 +58,7 @@ CREATE TABLE `master_table` (
   `id` int(11) NOT NULL,
   `code` varchar(50) DEFAULT NULL,
   `newspaper_name` varchar(250) DEFAULT NULL,
-  `usre_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `status` tinyint(1) DEFAULT '1',
   `created_at` datetime DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -68,8 +68,8 @@ CREATE TABLE `master_table` (
 -- Dumping data for table `master_table`
 --
 
-INSERT INTO `master_table` (`id`, `code`, `newspaper_name`, `usre_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, '55', 'ajaz', 0, 1, '2020-01-11 18:40:06', '2020-01-11 13:10:06'),
+INSERT INTO `master_table` (`id`, `code`, `newspaper_name`, `user_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, '55', 'ajaz96', 0, 1, '2020-01-11 18:40:06', '2020-01-13 07:48:05'),
 (9, 'sdc', 'cx', 0, 1, '2020-01-11 19:10:21', '2020-01-11 13:40:21');
 
 -- --------------------------------------------------------
@@ -99,7 +99,7 @@ CREATE TABLE `transaction_master` (
 --
 
 INSERT INTO `transaction_master` (`id`, `code`, `newspaper_name`, `type`, `impact_of_news`, `heading`, `size`, `date`, `image`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, '55', 1, 1, 2, 'hsdsdjh', '56', '2020-01-13', 'Screenshot_from_2019-04-26_18-18-16.png', 1, 0, '2020-01-13 10:37:11', '2020-01-13 05:40:56');
+(1, '55', 1, 2, 2, 'hsdsdjh', '56', '2020-01-13', 'Screenshot_from_2019-04-26_18-18-16.png', 1, 0, '2020-01-13 10:37:11', '2020-01-13 07:48:16');
 
 --
 -- Indexes for dumped tables
