@@ -26,13 +26,13 @@
                     class="xn-text">Dashboard</span></a></li>
      
         <li class="<?php if($active_menu=='master'){	echo 'x-active-nav';	} ?>"><a
-                href="<?php echo base_url() ?>Welcome/master"><span class="fa fa-bed"></span> <span
-                    class="xn-text">Master </span></a></li>
+                href="<?php echo base_url() ?>Welcome/master"><span class="fa fa-newspaper-o "></span> <span
+                    class="xn-text">Newspaper Master </span></a></li>
 					<li class="<?php if($active_menu=='transaction'){	echo 'x-active-nav';	} ?>"><a
-                href="<?php echo base_url() ?>Welcome/transaction"><span class="fa fa-bed"></span> <span
+                href="<?php echo base_url() ?>Welcome/transaction"><span class="fa fa-exchange"></span> <span
                     class="xn-text">Transaction </span></a></li>
 					<li class="<?php if($active_menu=='report'){	echo 'x-active-nav';	} ?>"><a
-                href="<?php echo base_url() ?>Welcome/report"><span class="fa fa-bed"></span> <span
+                href="<?php echo base_url() ?>Welcome/report"><span class="fa fa-file"></span> <span
                     class="xn-text">Report </span></a></li>
      
   

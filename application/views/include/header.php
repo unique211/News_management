@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
       <!-- META SECTION -->
-      <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>images/hotel.png">
+      <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>images/newspaper.ico">
       <title>Newspaper Management</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
