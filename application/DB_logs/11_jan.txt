@@ -1,0 +1,28 @@
+CREATE TABLE bill_details (
+ id int(11) NOT NULL AUTO_INCREMENT,
+ bill_ref_id int(11) NOT NULL,
+ item_id int(11) NOT NULL,
+ varity varchar(50) NOT NULL,
+ qty int(11) NOT NULL,
+ rate decimal(10,2) NOT NULL,
+ amount decimal(10,2) NOT NULL,
+ created_at datetime NOT NULL,
+ PRIMARY KEY (`id`)
+)
+
+
+
+CREATE TABLE bill_master (
+ id int(11) NOT NULL AUTO_INCREMENT,
+ date date DEFAULT NULL,
+ customer_name varchar(50) DEFAULT NULL,
+ table_id int(11) DEFAULT NULL,
+ emp_id int(11) DEFAULT NULL,
+ gst_per decimal(10,2) DEFAULT NULL,
+ total_amt decimal(10,2) DEFAULT NULL,
+ hotel_id int(11) DEFAULT NULL,
+ status tinyint(1) DEFAULT '1',
+ created_at datetime DEFAULT NULL,
+ updated_at timestamp NULL DEFAULT NULL,
+ PRIMARY KEY (`id`)
+)
