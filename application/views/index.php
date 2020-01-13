@@ -89,7 +89,7 @@
                                 </h2>
                                 <h5>News Paper Count</h5>
                                 <div class="stat-icon">
-                                    <i class="fa fa-registered fa-3x"></i>
+                                    <i class="fa fa-newspaper-o fa-3x"></i>
                                 </div>
                              
                             </div>
