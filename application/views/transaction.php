@@ -25,10 +25,11 @@
                               <!-- START SIMPLE DATATABLE -->
                               <div class="panel panel-default">
                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Transaction Master</h3>
+                                       <div class="section_header"><span class="fa fa-exchange"> Transaction Master</span>
+                                        <!--<h3 class="panel-title">Transaction Master</h3>-->
                                         <ul class="panel-controls">
-                                             <li> <button class="btn btn-success btnhideshow" style="background-color:#00B050;"> Add Detail</button></li>
-                                        </ul>
+                                             <li> <button class="btn btn-success btnhideshow" style="background-color:#33414e;margin-right:10px"><i class="fa fa-plus"></i> Add Detail</button></li>
+                                        </ul></div>
                                    </div>
                                    <div class="panel-body">
                                         <div class="col-lg-12 ">
@@ -47,9 +48,10 @@
                               <!-- START SIMPLE DATATABLE -->
                               <div class="panel panel-default">
                                    <div class="panel-heading">
-                                   <h3 class="panel-title">Transaction Master</h3>
+                                   <!--<h3 class="panel-title">Transaction Master</h3>-->
+                                    <div class="section_header"><span class="fa fa-exchange"> Transaction Master</span>
                                         <div class="pull-right">
-                                             <button class="btn btn-success closehideshow" style="background-color:#00B050;">View Detail</button>
+                                             <button class="btn btn-success closehideshow" style="background-color:#33414e;margin-right:10px"><i class="fa fa-eye"></i> View Detail</button></div>
                                         </div>
                                    </div>
                                    <div class="panel-body">

@@ -19,7 +19,7 @@
 
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-                <li class="active">Table Master</li>
+                <li class="active">NewsPaper Master</li>
 
             </ul>
             <!-- END BREADCRUMB -->
@@ -37,7 +37,8 @@
                         <!-- START SIMPLE DATATABLE -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Add Table Form</h3>
+                                <div class="section_header"><span class="fa fa-newspaper-o"> Add NewsPaper</span></div>
+                                <!--<h3 class="panel-title">Add NewsPaper</h3>-->
                                 <div class="pull-right">
                                     <!-- <button class="btn btn-success closehideshow" style="background-color:#00B050;">View
 									Table</button> -->

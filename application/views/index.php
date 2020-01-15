@@ -37,12 +37,49 @@
                 position: relative;
                 overflow: hidden;
                 padding: 25px 20px;
-                margin-bottom: 20px;
+                margin-bottom: 10px;
                 color: #fff;
                 cursor: pointer;
                 border-radius: 10px;
                 -moz-border-radius: 10px;
                 -webkit-border-radius: 10px;
+                border-color: green;
+                border-left-style: double;
+                border-left-width: thick;
+                /*border-right-color: lightgreen;*/
+                border-right-style: solid;
+                border-right-width: thin;
+                /*border-top-color: lightgreen;*/
+                border-top-style: solid;
+                border-top-width: thin;
+                /*border-bottom-color: lightgreen;*/
+                border-bottom-style: solid;
+                border-bottom-width: thin;
+    
+            }
+            .panel-stat4 {
+                position: relative;
+                overflow: hidden;
+                padding: 25px 20px;
+                margin-bottom: 10px;
+                color: #fff;
+                cursor: pointer;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                border-color: orange;
+                border-left-style: double;
+                border-left-width: thick;
+                /*border-right-color: lightgreen;*/
+                border-right-style: solid;
+                border-right-width: thin;
+                /*border-top-color: lightgreen;*/
+                border-top-style: solid;
+                border-top-width: thin;
+                /*border-bottom-color: lightgreen;*/
+                border-bottom-style: solid;
+                border-bottom-width: thin;
+    
             }
 
             .bg-danger {
@@ -68,7 +105,14 @@
                 top: 20px;
                 right: 10px;
                 font-size: 30px;
-                opacity: 0.3;
+                opacity: 0.7;
+            }
+            .panel-stat4 .stat-icon {
+                position: absolute;
+                top: 20px;
+                right: 10px;
+                font-size: 30px;
+                opacity: 0.7;
             }
 
             .fa-3x {
@@ -82,45 +126,50 @@
                 <!--NEWS SECTION-->
                 <div class="padding-md col-md-12">
                     <div class="row">
+                         <a
+                href="<?php echo base_url() ?>Welcome/master">
                         <div class="col-sm-12 col-md-6">
-                            <div class="panel-stat3 bg-danger">
+                            <div class="panel-stat3">
 							<h2 class="m-top-none" id="userCount">
                                     <span id="today_news">0</span>/<span id="all_news">0</span>
                                 </h2>
                                 <h5>News Paper Count</h5>
                                 <div class="stat-icon">
-                                    <i class="fa fa-newspaper-o fa-3x"></i>
+                                    <i class="fa fa-newspaper-o fa-3x" style="color: darkgreen;"></i>
                                 </div>
                              
                             </div>
-                        </div><!-- /.col -->
+                        </div></a><!-- /.col -->
+                         <a
+                href="<?php echo base_url() ?>Welcome/transaction">
                         <div class="col-sm-12 col-md-6">
-                            <div class="panel-stat3 bg-info">
-                               
-                          
+                            <div class="panel-stat4">
 							<h2 class="m-top-none" id="userCount">
 							<span id="today_transaction">0</span>/<span id="all_transaction">0</span>
                                 </h2>
 										
                                         <h5>Transaction Count</h5>
                                         <div class="stat-icon">
-                                            <i class="fa fa-inr fa-3x"></i>
+                                            <i class="fa fa-inr fa-3x" style="color:darkorange;"></i>
                                         </div>
                                        
                             </div>
-                        </div><!-- /.col -->
+                        </div>
+                        </a><!-- /.col -->
                     </div>
                 </div>
                 <div class="padding-md col-md-12">
                     <div class="row">
+                       <a
+                href="<?php echo base_url() ?>Welcome/transaction">
                         <div class="col-sm-12 ">
                             <!-- START SIMPLE DATATABLE -->
                             <div class=" panel panel-default">
                                 <div class="panel-heading">
                                  
+                                   <div class="section_header"><span class="fa fa-exchange"> Last 10 Transactions</span></div>
                                   
-                                  
-                                    <h3 class="panel-title">Transaction Details</h3>
+                                    <!--<h3 class="panel-title">Transaction Details</h3>-->
                                   
                                     <ul class="panel-controls">
                                         <li>
@@ -137,7 +186,7 @@
                             </div>
                             <!-- END SIMPLE DATATABLE -->
                         </div>
-
+</a>
                        
 
 

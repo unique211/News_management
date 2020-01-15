@@ -26,7 +26,7 @@
                         <!-- START SIMPLE DATATABLE -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Reports</h3>
+                                <div class="section_header"><span class="fa fa-file"> Reports</span></div>
                                 <!-- <ul class="panel-controls">
                                              <li> <button class="btn btn-success btnhideshow" style="background-color:#00B050;"> Add Detail</button></li>
                                         </ul> -->
