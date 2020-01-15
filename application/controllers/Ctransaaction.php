@@ -32,6 +32,7 @@ class Ctransaaction extends CI_Controller
 					'size'=>$this->input->post('size'),
 					'date'=>$this->input->post('date'),
 					'image'=>$this->input->post('image'),
+					'amount'=>$this->input->post('amount'),
 					'user_id'=>$userid,
                     'created_at'=>$date,
                     'updated_at'=>$date,
@@ -47,6 +48,7 @@ class Ctransaaction extends CI_Controller
 					'size'=>$this->input->post('size'),
 					'date'=>$this->input->post('date'),
 					'image'=>$this->input->post('image'),
+					'amount'=>$this->input->post('amount'),
 					'user_id'=>$userid,
                      'updated_at'=>$date,
                );

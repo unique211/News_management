@@ -47,7 +47,7 @@ class Report_model extends CI_Model
 		$query = $this->db->get();
 		return $query->result();
 	}
-	function generate_report($from,$to,$type,$impact)
+	function generate_report($from,$to,$type,$impact,$newspaper)
 	{
 		
 		$this->db->select('transaction_master.*,master_table.newspaper_name as newspaper_nm');
@@ -59,6 +59,9 @@ class Report_model extends CI_Model
 			}
 			if($impact>0){
 				$this->db->where('transaction_master.impact_of_news', $impact);
+			}
+			if($newspaper>0){
+				$this->db->where('transaction_master.newspaper_name', $newspaper);
 			}
 
 			$this->db->where('transaction_master.date >=', $from);

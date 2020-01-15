@@ -91,6 +91,7 @@ $(document).ready(function() {
         var to_date = $("#to_date").val();
         var type = $("#type").val();
         var impact = $("#impact").val();
+        var newspaper = $("#newpaper_name").val();
 
         var dateslt = from_date.split('/');
         var from = dateslt[2] + '-' + dateslt[1] + '-' + dateslt[0];
@@ -106,6 +107,7 @@ $(document).ready(function() {
             data: {
                 type: type,
                 impact: impact,
+                newspaper: newspaper,
                 from: from,
                 to: to,
                 // table_name: table_name,
@@ -123,13 +125,14 @@ $(document).ready(function() {
                     '<thead>' +
                     '<tr>' +
                     '<th><font style="font-weight:bold">Sr. No.</font></th>' +
-                    '<th ><font style="font-weight:bold">News Date</font></th>' +
+                    '<th ><font style="font-weight:bold">News/Advt. Date</font></th>' +
                     '<th><font style="font-weight:bold">Code</font></th>' +
-                    '<th><font style="font-weight:bold">News Paper Name</font></th>' +
+                    '<th><font style="font-weight:bold">NewsPaper Name</font></th>' +
                     '<th><font style="font-weight:bold">Type</font></th>' +
-                    '<th><font style="font-weight:bold">Impact of News</font></th>' +
-                    '<th><font style="font-weight:bold">News Heading</font></th>' +
-                    '<th><font style="font-weight:bold">News Size</font></th>' +
+                    '<th><font style="font-weight:bold">Impact of News/Advt.</font></th>' +
+                    '<th><font style="font-weight:bold">News/Advt. Heading</font></th>' +
+                    '<th><font style="font-weight:bold">News/Advt. Size</font></th>' +
+                    '<th><font style="font-weight:bold">News/Advt. Amount</font></th>' +
                     '<th><font style="font-weight:bold">View Image</font></th>' +
                     '</tr>' +
                     '</thead>' +
@@ -160,7 +163,7 @@ $(document).ready(function() {
                     if (data[i].image == null || data[i].image == "") {
                         image = "No Image";
                     } else {
-                        image = '<img src="' + base_url + 'Upload/' + data[i].image + '" height="50px" width="50px"></img>';
+                        image = '<a href="' + base_url + 'Upload/' + data[i].image + '" target="_blank"><img src="' + base_url + 'Upload/' + data[i].image + '" height="50px" width="50px"></img></a>';
                     }
 
 
@@ -173,6 +176,7 @@ $(document).ready(function() {
                         '<td  >' + impact_of_news + '</td>' +
                         '<td  >' + data[i].heading + '</td>' +
                         '<td  >' + data[i].size + '</td>' +
+                        '<td  >' + data[i].amount + '</td>' +
                         '<td  >' + image + '</td>' +
                         '</tr>';
 
@@ -329,7 +333,46 @@ $(document).ready(function() {
     });
 
 
+    getMasterSelect('master_table', '#newpaper_name');
 
+    function getMasterSelect(table_name, selecter) {
+
+        $.ajax({
+            type: "POST",
+            url: base_url + "Ctransaaction/getdropdown",
+            data: {
+                table_name: table_name,
+            },
+            dataType: "JSON",
+            async: false,
+            success: function(data) {
+                console.log(data);
+                html = '';
+                var name = '';
+                //					
+                html += '<option selected  value="0" >All</option>';
+                //						}
+                for (i = 0; i < data.length; i++) {
+                    var id = '';
+                    if (table_name == "master_table") {
+                        name = data[i].newspaper_name;
+                        id = data[i].id;
+                    } else if (table_name == "table_master") {
+                        name = data[i].table_name;
+                        id = data[i].id;
+                    } else if (table_name == "item_master") {
+                        name = data[i].curse;
+                        id = data[i].id;
+                    }
+
+                    //alert(name);
+                    html += '<option value="' + id + '" >' + name + '</option>';
+
+                }
+                $(selecter).html(html);
+            }
+        });
+    }
 
 
 

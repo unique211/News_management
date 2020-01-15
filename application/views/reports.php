@@ -68,6 +68,23 @@
                                                     </div>
 
                                                 </div>
+											</div>
+											<!-- newspaper -->
+											<div class="row">
+                                                <div class="form-group">
+                                                    <div class="col-sm-3">
+                                                        <label>Newspaper Name</label>
+                                                    </div>
+                                                    <div class="col-sm-9">
+													<select id="newpaper_name"
+                                                            class="form-control fstdropdown-select"
+                                                            name="newpaper_name">
+
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
                                             </div>
                                             <!--type  -->
                                             <div class="row">
@@ -90,7 +107,7 @@
                                             <div class="row">
                                                 <div class="form-group">
                                                     <div class="col-sm-3">
-                                                        <label>Impact of news</label>
+                                                        <label>Impact of news/advt.</label>
                                                     </div>
                                                     <div class="col-sm-9">
                                                         <select id="impact" class="form-control " name="impact">
@@ -108,7 +125,7 @@
                                                     <input type="hidden" id="save_update" value="">
                                                     <button class="btn btn-primary" type="submit">Search</button>
                                         </form>
-								<button class="btn btn-info " id="reset">Reset</button>
+								<!-- <button class="btn btn-info " id="reset">Reset</button> -->
 								<br>
                                     </div>
                                 </div>
