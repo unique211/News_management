@@ -268,7 +268,7 @@ $(document).ready(function() {
                     $("#msg").html("<font id='doc_image_name1' color='green'>" + data[i].image + "</font>");
                     // alert(data[i].image);
                     if (data[i].image == null) {
-                        $('#displayimg').attr("src", "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+                        $('#displayimg').attr("src", base_url + "images/No-Image-Available.png");
                     } else {
                         $('#displayimg').attr("src", base_url + 'Upload/' + data[i].image);
                     }
@@ -300,20 +300,22 @@ $(document).ready(function() {
         $('#newpaper_name').val('');
         $('#newpaper_name').html('');
 
-        $('#type').val('');
-        $('#impact').val('');
+        $('#type').val(1);
+        $('#impact').val(1);
         $('#heading').val('');
         $('#codesize').val('');
-        $('#news_date').val('');
+        $('#news_date').val(date);
         $('#amount').val('');
         $('#file_attachother').val('');
 
         $("#msg").html("");
         // alert(data[i].image);
+        // alert();
 
-        $('#displayimg').attr("src", "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+        $('#displayimg').attr("src", base_url + "images/No-Image-Available.png");
 
         getMasterSelect('master_table', '#newpaper_name');
+
 
     }
     $(document).on('click', '.closehideshow', function() {
@@ -446,7 +448,7 @@ $(document).ready(function() {
         'onComplete': function(response) {
             if (response == '') {
                 $("#msg").html("<font color='red'>" + "Error in file upload" + "</font>");
-                $('#displayimg').attr("src", "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+                $('#displayimg').attr("src", base_url + "images/No-Image-Available.png");
             } else {
                 $("#file_attachother").val(response);
                 $("#msg").html("<font id='doc_image_name1' color='green'>" + response + "</font>");

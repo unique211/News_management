@@ -72,4 +72,17 @@ class CMaster extends CI_Controller
 		echo json_encode($data);	
 	}
 	
+	public function chk_code(){
+	
+        $code=$this->input->post('code');
+		$data=$this->Master_model->chk_code($code);			
+		echo json_encode($data);	
+	}
+	public function chk_name(){
+	
+        $news_name=$this->input->post('news_name');
+		$data=$this->Master_model->chk_name($news_name);			
+		echo json_encode($data);	
+	}
+	
 }

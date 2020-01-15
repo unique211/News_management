@@ -59,4 +59,29 @@ class Master_model extends CI_Model
 			return $query->result();
 		
 	}
+	function chk_code($code)
+	{
+		
+			$this->db->select('*');
+			$this->db->from('master_table');
+
+			$this->db->where('master_table.status', 1);
+			$this->db->where('master_table.code', $code);
+			$query = $this->db->get();
+			return  $query->num_rows();
+		
+	}
+	function chk_name($news_name)
+	{
+		
+			$this->db->select('*');
+			$this->db->from('master_table');
+
+			$this->db->where('master_table.status', 1);
+			$this->db->where('master_table.newspaper_name', $news_name);
+			$query = $this->db->get();
+			return  $query->num_rows();
+		
+	}
+
 }

@@ -113,11 +113,11 @@
                                             <div class="row">
                                                 <div class="form-group">
                                                     <div class="col-sm-6">
-                                                        <label>Type</label>
+                                                        <label>Type*</label>
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <select id="type" class="form-control " name="type">
-                                                            <option value="1">News</option>
+                                                        <select id="type" class="form-control " name="type" required>
+                                                            <option value="1" selected>News</option>
                                                             <option value="2">Advertisement</option>
                                                         </select>
 
@@ -129,11 +129,11 @@
                                             <div class="row">
                                                 <div class="form-group">
                                                     <div class="col-sm-6">
-                                                        <label>Impact of news/advt.</label>
+                                                        <label>Impact of news/advt.*</label>
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <select id="impact" class="form-control " name="impact">
-                                                            <option value="1">Positive</option>
+                                                        <select id="impact" class="form-control " name="impact" required>
+                                                            <option value="1" selected>Positive</option>
                                                             <option value="2">Negative</option>
                                                         </select>
 
@@ -145,11 +145,11 @@
                                             <div class="row">
                                                 <div class="form-group">
                                                     <div class="col-sm-6">
-                                                        <label>News/Advt. Heading</label>
+                                                        <label>News/Advt. Heading*</label>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <textarea id="heading" class="form-control" name="heading"
-                                                            style="resize: none"></textarea>
+                                                            style="resize: none" required></textarea>
 
                                                     </div>
 
@@ -180,7 +180,7 @@
                                                             required>
                                                             <input type="text"
                                                                 class="form-control input-sm placeholdesize date1"
-                                                                id="news_date" autocomplete="off" name="news_date">
+                                                                id="news_date" autocomplete="off" name="news_date" required>
                                                             <div class="input-group-addon">
                                                                 <span class="fa fa-calendar"></span>
                                                             </div>
@@ -208,7 +208,7 @@
                                         <div class="row">
                                             <div class="form-group">
                                                 <img id="displayimg" name="displayimg"
-                                                    src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                                    src="<?php echo base_url(); ?>images/No-Image-Available.png"
                                                     height="300px" width="400px"></img>
                                             </div>
                                         </div>
