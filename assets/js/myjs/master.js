@@ -1,30 +1,66 @@
 $(document).ready(function() {
     var table_name = "master_table";
+    var code_flag = 0;
+    var name_flag = 0;
 
-    // $(document).on("keyup", "#user_id", function(e) {
-    //     e.preventDefault();
-    //     var user_id = $('#user_id').val();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: base_url + "Settings/chk_user_id",
+    $(document).on("blur", "#code", function(e) {
+        e.preventDefault();
+        var code = $('#code').val();
+        $(':input[type="submit"]').prop('disabled', false);
+        $.ajax({
+            type: "POST",
+            url: base_url + "CMaster/chk_code",
 
-    //         data: {
-    //             user_id: user_id,
-    //         },
-    //         dataType: "JSON",
-    //         async: false,
-    //         success: function(data) {
-    //             if (data == 0) {
-    //                 $(".validation2").html(''); // remove it
-    //                 $(':input[type="submit"]').prop('disabled', false);
-    //             } else {
-    //                 $(".validation2").html("This UserId is Already Exists,Please Enter another UserId");
-    //                 $(':input[type="submit"]').prop('disabled', true);
-    //                 $("#user_id").focus();
-    //             }
-    //         }
-    //     });
-    // });
+            data: {
+                code: code,
+            },
+            dataType: "JSON",
+            async: false,
+            success: function(data) {
+                //   alert(data);
+                if (data == 0) {
+
+                    $(':input[type="submit"]').prop('disabled', false);
+                    code_flag = 0;
+                } else {
+                    swal("Already Exists !!", "Hey, This Code is Already Exists,Please Enter another Code !!", "error");
+                    $(':input[type="submit"]').prop('disabled', true);
+                    code_flag = 1;
+                    //   $("#code").focus();
+                }
+            }
+        });
+    });
+    $(document).on("blur", "#news_name", function(e) {
+        e.preventDefault();
+        var news_name = $('#news_name').val();
+        $(':input[type="submit"]').prop('disabled', false);
+        $.ajax({
+            type: "POST",
+            url: base_url + "CMaster/chk_name",
+
+            data: {
+                news_name: news_name,
+            },
+            dataType: "JSON",
+            async: false,
+            success: function(data) {
+                //   alert(data);
+                if (data == 0) {
+
+                    $(':input[type="submit"]').prop('disabled', false);
+                    name_flag = 0;
+                } else {
+                    swal("Already Exists !!", "Hey, This Newspaper is Already Exists,Please Enter another Newspaper !!", "error");
+                    $(':input[type="submit"]').prop('disabled', true);
+                    name_flag = 1;
+                    //   $("#code").focus();
+                }
+            }
+        });
+    });
+
+
     $(document).on("submit", "#master_form", function(e) {
         e.preventDefault();
         var id = $('#save_update').val();
@@ -32,45 +68,49 @@ $(document).ready(function() {
         var code = $('#code').val();
         var newspaper_name = $('#news_name').val();
 
+        if (name_flag == 1 || code_flag == 1) {
+            swal("Already Exists !!", "Hey, Your Code OR Newspaper Name is Already Exists !!", "error");
+        } else {
+            $.ajax({
+                type: "POST",
+                url: base_url + "CMaster/adddata",
 
+                data: {
+                    id: id,
+                    code: code,
+                    newspaper_name: newspaper_name,
+                    table_name: table_name
+                },
+                dataType: "JSON",
+                async: false,
+                success: function(data) {
+                    if (data == true) {
+                        if (id != "") {
+                            successTost("Master Update Successfully");
 
-
-
-
-
-        $.ajax({
-            type: "POST",
-            url: base_url + "CMaster/adddata",
-
-            data: {
-                id: id,
-                code: code,
-                newspaper_name: newspaper_name,
-                table_name: table_name
-            },
-            dataType: "JSON",
-            async: false,
-            success: function(data) {
-                if (data == true) {
-                    if (id != "") {
-                        successTost("Master Update Successfully");
-
+                        } else {
+                            successTost("Master Added Successfully");
+                        }
+                        //   $('#master_form')[0].reset();
+                        $('#save_update').val('');
+                        $('.formhideshow').hide();
+                        $('.tablehideshow').show();
+                        form_clear();
+                        $('.closehideshow').trigger('click');
+                        datashow();
                     } else {
-                        successTost("Master Added Successfully");
+                        errorTost("Master Cannot Save");
                     }
-                    //   $('#master_form')[0].reset();
-                    $('#save_update').val('');
-                    $('.formhideshow').hide();
-                    $('.tablehideshow').show();
-                    form_clear();
-                    $('.closehideshow').trigger('click');
-                    datashow();
-                } else {
-                    errorTost("Master Cannot Save");
-                }
 
-            }
-        });
+                }
+            });
+        }
+
+
+
+
+
+
 
 
 

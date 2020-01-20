@@ -1590,7 +1590,7 @@ a.list-group-item:focus {
 .panel-info .panel-heading,
 .panel-warning .panel-heading,
 .panel-danger .panel-heading {
-  background: #F5F5F5;
+  background: #1caf9a;
   border-color: #E5E5E5;
 }
 .panel-fullscreen-wrap {
@@ -7524,5 +7524,11 @@ padding: 0px 15px 0px 0px;
 }
 .subscription-details{
   min-height: 80vh;
+}
+.section_header{
+  color:#f1f5f9;
+  font-weight: bold;
+  font-size: 15px;
+  padding-left: 10px;
 }
 

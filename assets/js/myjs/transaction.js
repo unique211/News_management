@@ -37,7 +37,7 @@ $(document).ready(function() {
         var size = $('#codesize').val();
         var date1 = $('#news_date').val();
         var image = $('#file_attachother').val();
-
+        var amount = $('#amount').val();
 
         var dateslt = date1.split('/');
         var date = dateslt[2] + '-' + dateslt[1] + '-' + dateslt[0];
@@ -58,6 +58,7 @@ $(document).ready(function() {
                     size: size,
                     date: date,
                     image: image,
+                    amount: amount,
                     table_name: table_name
                 },
                 dataType: "JSON",
@@ -117,7 +118,9 @@ $(document).ready(function() {
                     '<th ><font style="font-weight:bold">Code</font></th>' +
                     '<th><font style="font-weight:bold">Newspaper Name</font></th>' +
                     '<th><font style="font-weight:bold">Type</font></th>' +
-                    '<th><font style="font-weight:bold">Impact of News</font></th>' +
+                    '<th><font style="font-weight:bold">Impact of News/Advt.</font></th>' +
+                    '<th><font style="font-weight:bold">News/Advt. Amount</font></th>' +
+                    '<th><font style="font-weight:bold">View Image</font></th>' +
                     '<th class="not-export-column"><font style="font-weight:bold">Action</font></th>' +
                     '</tr>' +
                     '</thead>' +
@@ -140,6 +143,12 @@ $(document).ready(function() {
                             impact_of_news = "Negative";
                         }
                     }
+                    var image = "";
+                    if (data[i].image == null || data[i].image == "") {
+                        image = "No Image";
+                    } else {
+                        image = '<a href="' + base_url + 'Upload/' + data[i].image + '" target="_blank"><img src="' + base_url + 'Upload/' + data[i].image + '"  height="50px" width="50px"></img></a>';
+                    }
 
 
                     html += '<tr>' +
@@ -148,6 +157,8 @@ $(document).ready(function() {
                         '<td  >' + data[i].newspaper_nm + '</td>' +
                         '<td  >' + type + '</td>' +
                         '<td  >' + impact_of_news + '</td>' +
+                        '<td  >' + data[i].amount + '</td>' +
+                        '<td  >' + image + '</td>' +
                         '<td class="not-export-column" ><button name="edit" value="edit" class="edit_data btn btn-success" id=' + data[i].id + '><i class="fa fa-edit"></i></button>' +
                         '&nbsp;<button name="delete" value="Delete" class="delete_data btn btn-danger" id=' + data[i].id + '><i class="fa fa-trash"></i></button>' +
                         '</td></tr>';
@@ -253,10 +264,11 @@ $(document).ready(function() {
                     $('#codesize').val(data[i].size);
                     $('#news_date').val(date);
                     $('#file_attachother').val(data[i].image);
+                    $('#amount').val(data[i].amount);
                     $("#msg").html("<font id='doc_image_name1' color='green'>" + data[i].image + "</font>");
                     // alert(data[i].image);
                     if (data[i].image == null) {
-                        $('#displayimg').attr("src", "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+                        $('#displayimg').attr("src", base_url + "images/No-Image-Available.png");
                     } else {
                         $('#displayimg').attr("src", base_url + 'Upload/' + data[i].image);
                     }
@@ -288,18 +300,22 @@ $(document).ready(function() {
         $('#newpaper_name').val('');
         $('#newpaper_name').html('');
 
-        $('#type').val('');
-        $('#impact').val('');
+        $('#type').val(1);
+        $('#impact').val(1);
         $('#heading').val('');
         $('#codesize').val('');
-        $('#news_date').val('');
+        $('#news_date').val(date);
+        $('#amount').val('');
         $('#file_attachother').val('');
+
         $("#msg").html("");
         // alert(data[i].image);
+        // alert();
 
-        $('#displayimg').attr("src", "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+        $('#displayimg').attr("src", base_url + "images/No-Image-Available.png");
 
         getMasterSelect('master_table', '#newpaper_name');
+
 
     }
     $(document).on('click', '.closehideshow', function() {
@@ -432,7 +448,7 @@ $(document).ready(function() {
         'onComplete': function(response) {
             if (response == '') {
                 $("#msg").html("<font color='red'>" + "Error in file upload" + "</font>");
-                $('#displayimg').attr("src", "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+                $('#displayimg').attr("src", base_url + "images/No-Image-Available.png");
             } else {
                 $("#file_attachother").val(response);
                 $("#msg").html("<font id='doc_image_name1' color='green'>" + response + "</font>");

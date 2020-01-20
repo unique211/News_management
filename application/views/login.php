@@ -7,7 +7,7 @@
               <!-- LOGIN WIDGET -->
               <div class="row popup-container">
                 <div id="infoMessage"></div>
-								<div class="row" id="MYROW" style="margin: 0 auto;max-width:640px; background: #ffffff;">
+								<div class="row" id="MYROW" style="margin: 0 auto;border-left-color: #1caf9a;border-left-style: solid;border-left-width: 20px;max-width:640px;background: #ffffff;">
                     <div class="col-4 col-sm-2 myDiv" style="text-align:center;">
                         <!-- width: 21.666667%; padding-top: 66px; -->
                         <div class="log">

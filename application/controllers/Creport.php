@@ -71,7 +71,8 @@ class Creport extends CI_Controller
 		$to=$this->input->post('to');
 		$type=$this->input->post('type');
 		$impact=$this->input->post('impact');
-		$data=$this->Report_model->generate_report($from,$to,$type,$impact);			
+		$newspaper=$this->input->post('newspaper');
+		$data=$this->Report_model->generate_report($from,$to,$type,$impact,$newspaper);			
 		echo json_encode($data);	
 	}
 	
