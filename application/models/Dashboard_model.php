@@ -53,6 +53,8 @@ class Dashboard_model extends CI_Model{
 			$this->db->join('master_table', 'master_table.id=transaction_master.newspaper_name');
 			$this->db->where('transaction_master.status', 1);
 			$this->db->order_by('transaction_master.id', 'DESC');
+			//$this->db->order_by('transaction_master.id desc, transaction_master.date asc'); 
+		
 			$this->db->limit('10');	
 			$query = $this->db->get();
 			return $query->result();

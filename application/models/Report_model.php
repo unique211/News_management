@@ -66,7 +66,7 @@ class Report_model extends CI_Model
 
 			$this->db->where('transaction_master.date >=', $from);
 			$this->db->where('transaction_master.date <=', $to);
-			
+			$this->db->order_by('transaction_master.date', 'asc');
 			$query = $this->db->get();
 			return $query->result();
 		
