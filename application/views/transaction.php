@@ -118,7 +118,8 @@
                                                     <div class="col-sm-6">
                                                         <select id="type" class="form-control " name="type" required>
                                                             <option value="1" selected>News</option>
-                                                            <option value="2">Advertisement</option>
+															<option value="2">Advertisement</option>
+															<option value="3">Others</option>
                                                         </select>
 
                                                     </div>
@@ -134,7 +135,8 @@
                                                     <div class="col-sm-6">
                                                         <select id="impact" class="form-control " name="impact" required>
                                                             <option value="1" selected>Positive</option>
-                                                            <option value="2">Negative</option>
+															<option value="2">Negative</option>
+															<option value="3">Others</option>
                                                         </select>
 
                                                     </div>

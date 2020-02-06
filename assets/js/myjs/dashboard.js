@@ -47,7 +47,7 @@ $(document).ready(function() {
                 html += '<table id="myTable" class="table table-striped">' +
                     '<thead>' +
                     '<tr>' +
-                    '<th><font style="font-weight:bold">Sr. No.</font></th>' +
+                    // '<th><font style="font-weight:bold">Sr. No.</font></th>' +
                     '<th ><font style="font-weight:bold">News Date</font></th>' +
                     '<th><font style="font-weight:bold">Code</font></th>' +
                     '<th><font style="font-weight:bold">News Paper Name</font></th>' +
@@ -90,7 +90,7 @@ $(document).ready(function() {
 
 
                     html += '<tr>' +
-                        '<td >' + sr + '</td>' +
+                        // '<td class="table-plus datatable-nosort">' + sr + '</td>' +
                         '<td  >' + date + '</td>' +
                         '<td  >' + data[i].code + '</td>' +
                         '<td  >' + data[i].newspaper_nm + '</td>' +
@@ -106,23 +106,28 @@ $(document).ready(function() {
 
                 $('#show_master').html(html);
                 $('#myTable').DataTable({
+
+                    "order": [
+                        [0, "asc"]
+                    ],
+
                     dom: 'Bfrtip',
                     buttons: [{
-                            extend: 'pdfHtml5',
+                            extend: 'print',
                             title: 'News Report',
 
-                            orientation: 'portrait',
+                            orientation: 'landscape',
                             pageSize: 'LEGAL',
                             footer: true,
                             exportOptions: {
-                                columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                                columns: [0, 1, 2, 3, 4, 5, 6]
                             },
                         },
                         {
                             title: 'News Report',
                             extend: 'excelHtml5',
                             exportOptions: {
-                                columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                                columns: [0, 1, 2, 3, 4, 5, 6]
                             }
                         }
                     ]

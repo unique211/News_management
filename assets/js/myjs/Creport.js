@@ -186,12 +186,13 @@ $(document).ready(function() {
                 $('#show_master').html(html);
                 $('#myTable').DataTable({
                     dom: 'Bfrtip',
+
                     buttons: [{
-                            extend: 'pdfHtml5',
+                            extend: 'print',
                             title: 'News Report',
 
-                            orientation: 'portrait',
-                            pageSize: 'LEGAL',
+                            orientation: 'landscape',
+                            //pageSize: 'LEGAL',
                             footer: true,
                             exportOptions: {
                                 columns: [0, 1, 2, 3, 4, 5, 6, 7]

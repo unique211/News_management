@@ -24,6 +24,7 @@
                     <div class="col-4 col-sm-8  popup-container-inner">
                         <div class="panel panel-default" style="box-shadow:0px 0px 0px 0px rgba(0, 0, 0, 0) !important">
                             <div class="panel-body">
+							<h2 style="align:center;">Newspaper Management </h2>
                                 <h2>Log In</h2>
                                 <p>Please fill in your basic personal information in the following fields:</p>
                                 <form id="loginform" name="loginform" class="form-signin">
